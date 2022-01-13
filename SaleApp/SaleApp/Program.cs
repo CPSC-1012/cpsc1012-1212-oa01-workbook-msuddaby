@@ -2,22 +2,28 @@
 
 namespace SaleApp
 {
+
+
     internal class Program
     {
         static void Main(string[] args)
         {
             //Declare our variables
             double price, tax, total;
+            const double taxrate = 0.05;
 
-            //Assign values for each variabel
-            price = 29.75;
-            tax = 1.76;
-            total = 31.51;
+            Console.Write("Enter price: ");
+            string priceprompt = Console.ReadLine();
+            price = double.Parse(priceprompt);
+
+            //Assign values for each variable
+            tax = price * taxrate;
+            total = price + tax;
 
             //Print our totals.
-            Console.WriteLine($"The price of the item is {price:C}");
-            Console.WriteLine($"The tax is {tax:C}");
-            Console.WriteLine($"The total is {total:C}");
+            Console.WriteLine($"{"Price:", -10} {price, 8:C}");
+            Console.WriteLine($"{"Tax:", -10} {tax, 8:C}");
+            Console.WriteLine($"{"Total:", -10} {total, 8:C}");
         }
     }
 }
