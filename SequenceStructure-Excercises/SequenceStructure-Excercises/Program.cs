@@ -6,7 +6,7 @@ namespace SequenceStructure_Excercises
     {
         static void Main(string[] args)
         {
-            NextMonthInterest();
+            CylinderAreaVolume();
         }
 
         /* Question 1, Part 1
@@ -57,6 +57,36 @@ namespace SequenceStructure_Excercises
 
         //Question 2
         /*
+         * Purpose: Read the radius and length of a cylinder and calculate both the area and volume.
+         * 
+         * Inputs: radius and length of a cylinder
+         * Outputs: the area and volume of the cylinder, using the radius and length provided by the user.
+         */
+
+        public static void CylinderAreaVolume()
+        {
+            //Declare our variables with no values.
+            double radius, length, area, volume;
+
+            //Prompt user for our inputs
+            Console.Write("Enter the radius of your cylinder: ");
+            radius = double.Parse(Console.ReadLine());
+            Console.Write("Enter the length of your cylinder: ");
+            length = double.Parse(Console.ReadLine());
+
+            //Calculate the area
+            area = radius * radius * Math.PI;
+            //Calculate the volume
+            volume = area * length;
+
+            //Output the calculated values to the console.
+            Console.WriteLine($"The area is: {Math.Round(area, 4)}");
+            Console.WriteLine($"The volume is: {Math.Round(volume, 1)}");
+
+        }
+
+        //Question 3
+        /*
          * Purpose: Caclulate the area of a hexagon using the length of one side.
          *  
          * Inputs: hexagon side length
@@ -80,7 +110,7 @@ namespace SequenceStructure_Excercises
         }
 
 
-        //Question 3
+        //Question 4
         /*
          * Purpose: Take a user provided number (between 0 and 1000) then add each individual digit together.
          *  
@@ -102,7 +132,7 @@ namespace SequenceStructure_Excercises
             Console.WriteLine((((num / 10) / 10) % 10) + ((num / 10) % 10) + (num % 10));
         }
 
-        //Question 4
+        //Question 5
         /*
          * Purpose: Calculate the interest on the following month's payment using a formula.
          *  
